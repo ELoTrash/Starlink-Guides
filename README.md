@@ -7,3 +7,4 @@ https://discord.gg/Rr2u4ystEe
 
 ## Guides: 
 1. Tailscale - A guide to setting up LAN access with tailscale.
+2. Starlink GRPCurl - A guide to setting up automatic reboots and more. 
