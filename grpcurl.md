@@ -17,5 +17,7 @@ Can be installed on any linux device with cron and GRPCurl installed.
 5. At this stage you should see the GRPCurl output a help screen with a list of commands.
 6. Create a shell file called `reboot.sh` in the /usr/local path we extracted the GRPCurl files to. `cd /usr/local` then `nano reboot.sh`
 7. Inside the `reboot.sh` file we need to specify the command for the reboot for cron. 
-`cd /usr/local
-./grpcurl -plaintext -d {\"reboot\":{}} 192.168.100.1:9200 SpaceX.API.Device.Device/Handle`
+```
+cd /usr/local
+./grpcurl -plaintext -d {\"reboot\":{}} 192.168.100.1:9200 SpaceX.API.Device.Device/Handle
+```
