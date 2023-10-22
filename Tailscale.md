@@ -4,6 +4,7 @@ I have been using this setup for over a year with no issues on my Starlink ISP t
 ## Documents Cited:
 https://tailscale.com/kb/1019/subnets/
 https://tailscale.com/kb/1103/exit-nodes/#:~:text=Open%20the%20Tailscale%20menu%20and,select%20Allow%20local%20network%20access
+https://tailscale.com/
 
 ## prerequisites:
 - Debian/Ubuntu VM setup and up to date. * I run my node on proxmox in my homelab.
