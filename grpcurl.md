@@ -7,8 +7,8 @@ This is a guide for setting up automatic rebooting of your Starlink device.
 - https://crontab.guru/
   
 ## prerequisites:
-I set this up in a proxmox LXC environment.
-Can be installed on any linux device with cron and GRPCurl installed. 
+- I set this up in a proxmox LXC environment.
+- Can be installed on any linux device with cron and GRPCurl installed. 
 
 ## Steps:
 1. Download GRPCurl: `curl -OL https://github.com/fullstorydev/grpcurl/releases/download/v1.8.8/grpcurl_1.8.8_linux_x86_64.tar.gz`
