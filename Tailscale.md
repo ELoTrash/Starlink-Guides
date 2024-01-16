@@ -23,3 +23,5 @@ I have been using this setup for over a year with no issues on my Starlink ISP t
 5.  Advertise the routes to tailscale: `sudo tailscale up --advertise-routes=192.168.5.0/24`
    *Note: You will need to change the `192.168.5.0/24` to your local networks specific IPv4 addresses. You can specify specific addresses instead of the whole subnet if needed.*
 
+Thanks for reading :) 
+Questions or concerns, reach out to me on discord @shiroe_2000
