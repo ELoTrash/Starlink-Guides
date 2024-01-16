@@ -19,6 +19,7 @@ This is a beginners guide to installing a third party router to Starlink and the
 3. Log into your Starlink app on your mobile device, select settings, then select "Bypass Mode" option listed below. Slide the bypass to enable it. 
 4. With the Starlink router in bypass mode your third party router will now handle all the local routing. 
 5. Login to your third party router's IP address and configure your router settings. 
+6. Setup a static route, this step varies per router model and brand. 
 
 ### Notes: 
 - Third party router static IP settings will vary per router model and brand. 
