@@ -25,6 +25,7 @@ This is a beginners guide to installing a third party router to Starlink and the
 - Why use bypass mode? Starlink uses CG-NAT to assign private IP addresses to most plans. The Starlink router will perform a Network Address Translation (NAT), NAT allows a single ip to represent multiple devices with independent ip's (view the cited sources for more information). Starlink will in turn be a double NAT which can be problematic for certain devices. If you do not bypass the Starlink router you create a triple NAT, which can lead to more problems on your network. 
 - Portforwarding: If you are not paying for a Public IP from Starlink, a third party router alone will not let you portforward. 
 - Starlink Public IP's are not static, if you are paying for a public IP or using IPv6 the IP may change. It is a 1:! CG-NAT mapping. 
+- Starlink support will be a headache to deal with when using third party devices. They will require you to detach the device and attach the basic starlink provided router for diagnosis.
 
 Thanks for reading :) 
 Questions or concerns, reach out to me on discord @shiroe_2000

@@ -8,4 +8,4 @@ https://discord.gg/Rr2u4ystEe
 ## Guides: 
 1. Tailscale - A guide to setting up LAN access with tailscale.
 2. Starlink GRPCurl - A guide to setting up automatic reboots and more. 
-3. Starlink Network Diagram - A guide to adding a third party router to your Starlink network. 
+3. Third Party Routers - A guide to adding a third party router to your Starlink network. 
