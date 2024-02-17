@@ -6,10 +6,10 @@ This repo contains a list of useful guides for Starlink users.
 https://discord.gg/Rr2u4ystEe
 
 ## Dish versions:
-V1 - Black OG dish
-V2 - Round Circular dish
-V3 - Square Dishy
-V4 - Square no motor dish. 
+- V1 - Black OG dish
+- V2 - Round Circular dish
+- V3 - Square Dishy
+- V4 - Square no motor dish. 
 ## Guides: 
 1. Tailscale - A guide to setting up LAN access with tailscale.
 2. Starlink GRPCurl - A guide to setting up automatic reboots and more. 
