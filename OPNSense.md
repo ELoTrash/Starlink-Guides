@@ -107,4 +107,7 @@ Navigate to `System -> Settings -> Administration`:
     1. In the OPNSense WebUI, navigate to: `Interfaces -> Assignments` 
     2. At the bottom in the `Assign a new interface` section, select the new Wireguard tunnel that you created, Click `Add`. 
     3. NOTE: If you created multiple tunnels like I did this will need to be repeated for every tunnel. 
-    4.  
+    4. Add a name for the Interface, I named mine `WAN_PIAMINECRAFT`, `WAN_PIAPLEX`, `WAN_PIAMINECRAFT_MODDED` to keep track of each interfaces usecase. 
+    5. Check `enable interface`.
+    ![alt text](/Images/PIA-Portforwarding/wan%20piamc.png)
+    6. Click save. 
