@@ -26,7 +26,15 @@ Navigate to `System -> Settings -> Administration`:
     1. Go to System -> Access -> Users
     ![alt text](/Images/PIA-Portforwarding/system%20-%20pia%20api%20user.png)
     2. Click the orange plus in the top. 
-    3. Enter a username, I chose `PIA-APIUser`
+    3. Enter a username, I chose `PIA-WireguardAPI`
     4. Check the box that says `Generate a scrambled password to prevent local database logins for this user.` 
     5. Click Save
     ![alt text](/Images/PIA-Portforwarding/user%20config.png)
+2. Once you click save you can begin adding permissions to the user. 
+    1. Scroll up to the `effective Privileges` section and add the following: 
+    - `Firewall: Alias: Edit` 
+    - `Firewall: Aliases` (can be found by searching for "Alias")
+    - `System: Static Routes`
+    - `VPN: WireGuard` 
+    - Select the `+` icon to create an API key, save this for a later step. 
+    ![alt text](/Images/PIA-Portforwarding/user%20permissions%20and%20api%20key.png)
