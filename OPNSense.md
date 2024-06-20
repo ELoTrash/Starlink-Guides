@@ -111,3 +111,17 @@ Navigate to `System -> Settings -> Administration`:
     5. Check `enable interface`.
     ![alt text](/Images/PIA-Portforwarding/wan%20piamc.png)
     6. Click save. 
+6. Gateways: 
+    1. This step will need to be repeated for each VPN Tunnel you created. 
+    2. Go to `System -> Gateways -> Configuration` Click the `+` at the bottom right.
+    ![alt text](/Images/PIA-Portforwarding/gateways.png)
+    3. Make sure `Disabled` is not checked.
+    4. Insert a name for the gateway. 
+    5. In the interface, select the `WAN_PIAWG_NAME`
+    6. Check `Far Gateway` 
+    7. Uncheck `Disable Gateway Monitoring` 
+    8. Save and apply the changes.  
+    ![alt text](/Images/PIA-Portforwarding/mcgateway.png)
+    9. Navigate to your `WAN_DHCP` gateway and select the pencil icon to edit it. 
+    10. Change the priority to 1, click save. 
+    ![alt text](/Images/PIA-Portforwarding/defaultgateway.png)
