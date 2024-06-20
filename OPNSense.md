@@ -187,4 +187,6 @@ Navigate to `System -> Settings -> Administration`:
     - Direction: `in`
     - Source: `StarlinkLan2 net`, change yours to be what you have created (Default is LAN)
     - Gateway: `WAN_PIA`. 
-    Click Save. 
+    Click Save.
+    
+You should now have a working portforwarding system. 
