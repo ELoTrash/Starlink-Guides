@@ -12,4 +12,9 @@ NOTE: you can only have 1 port per VPN tunnel on PIA, with OPNSense you can have
 2. Navigate to `System -> Firmware -> Plugins`, here search for the `os-wireguard` plugin.
 Click the `+` symbol to install the Wireguard Plugin.  
 ![alt text](/Images/PIA-Portforwarding/wireguard%20plugin.png)
-3. 
+3. Ensure proper configurations inside OPNSense:
+    - Navigate to `System -> Settings -> Administration` 
+    1. Ensure that HTTPS is enabled. 
+    2. Enable Secure Shell
+    3. Permit root user login
+    4. Permit password login. 
