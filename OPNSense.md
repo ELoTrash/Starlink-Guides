@@ -100,3 +100,11 @@ Navigate to `System -> Settings -> Administration`:
     2. Run `nano PIAWireguard.json` paste in your JSON configuration. 
     3. Hit `CTRL + X` then `y` to save it. 
      ![alt text](/Images/PIA-Portforwarding/nano.png)
+    4. Run `chmod +x PIAWireguard.json` to make the file executable. 
+    5. Restart the configd service `service configd restart`. 
+    6. run the script: `/conf.PIAWireguard.py --debug`.
+5. Interfaces:
+    1. In the OPNSense WebUI, navigate to: `Interfaces -> Assignments` 
+    2. At the bottom in the `Assign a new interface` section, select the new Wireguard tunnel that you created, Click `Add`. 
+    3. NOTE: If you created multiple tunnels like I did this will need to be repeated for every tunnel. 
+    4.  
