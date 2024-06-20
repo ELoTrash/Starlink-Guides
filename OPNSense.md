@@ -147,15 +147,15 @@ Navigate to `System -> Settings -> Administration`:
     5. Click save. 
     6. Click Apply Changes. 
 10. Creating the NAT rule: 
-The FingerlessGlov3s guide does not include this section. I am continuing where he left off in hopes of helping others that are new to OPNSense. 
-1. Navigate to `Firewall -> NAT -> Port Forward` and click the `+` symbol. 
-![alt text](/Images/PIA-Portforwarding/firewallNAT.png)
-2. In the `interface` section, select your `WAN_PIA` interface that you created. 
-3. Make sure `TCP/IP Version` is `IPv4`. 
-4. Protocol: `TCP/UDP` 
-5. Destination: `WAN_PIA address` 
-6. Destination port: Choose the ALIAS that is created by the PIA script, this is the port opened by the VPN. `PIA_Minecraft_port` is mine. 
-7. Redirect target IP: set this to the local IP of the host that is hosting your server `192.168.x.x` 
-8. Redirect target Port: set this to your target port, for Minecraft it is `25565`
-9. Click Save
-![alt text](/Images/PIA-Portforwarding/nat%20rule.png)
+    - The FingerlessGlov3s guide does not include this section. I am continuing where he left off in hopes of helping others that are new to OPNSense. 
+    1. Navigate to `Firewall -> NAT -> Port Forward` and click the `+` symbol. 
+    ![alt text](/Images/PIA-Portforwarding/firewallNAT.png)
+    2. In the `interface` section, select your `WAN_PIA` interface that you created. 
+    3. Make sure `TCP/IP Version` is `IPv4`. 
+    4. Protocol: `TCP/UDP` 
+    5. Destination: `WAN_PIA address` 
+    6. Destination port: Choose the ALIAS that is created by the PIA script, this is the port opened by the VPN. `PIA_Minecraft_port` is mine. 
+    7. Redirect target IP: set this to the local IP of the host that is hosting your server `192.168.x.x` 
+    8. Redirect target Port: set this to your target port, for Minecraft it is `25565`
+    9. Click Save
+    ![alt text](/Images/PIA-Portforwarding/nat%20rule.png)
