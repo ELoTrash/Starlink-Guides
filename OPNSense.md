@@ -14,8 +14,7 @@ Click the `+` symbol to install the Wireguard Plugin.
 ![alt text](/Images/PIA-Portforwarding/wireguard%20plugin.png)
 3. Ensure proper configurations inside OPNSense:
 Navigate to `System -> Settings -> Administration`:
-    1. Ensure that HTTPS is enabled. 
-    1a. (Scroll down)
+    1. Ensure that HTTPS is enabled. (Scroll down)
     2. Enable Secure Shell
     3. Permit root user login
     4. Permit password login. 
