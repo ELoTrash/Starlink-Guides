@@ -1,7 +1,7 @@
 # OPNSense
-This is a beginners guide to using OPNSense with Private Internet Access (PIA) VPN to bypass CG-NAT that Starlink puts on its users.
-Huge shout out to the scripts and guides previously made to the community for making it simple to deploy a PIA tunnel on OPNSense. (FingerlessGlov3s)
-Note: PIA does not support portforwarding in the USA, I used canada as a close alternative and have no issues with latency for Minecraft / NGINX. 
+- This is a beginners guide to using OPNSense with Private Internet Access (PIA) VPN to bypass CG-NAT that Starlink puts on its users.
+- Huge shout out to the scripts and guides previously made to the community for making it simple to deploy a PIA tunnel on OPNSense. (FingerlessGlov3s)
+- Note: PIA does not support portforwarding in the USA, I used canada as a close alternative and have no issues with latency for Minecraft / NGINX. 
 
 ## Prerequisites:
 - Obtained a PIA subscription 
