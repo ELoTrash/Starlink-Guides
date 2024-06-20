@@ -159,3 +159,32 @@ Navigate to `System -> Settings -> Administration`:
     8. Redirect target Port: set this to your target port, for Minecraft it is `25565`
     9. Click Save
     ![alt text](/Images/PIA-Portforwarding/nat%20rule.png)
+11. Creating the Firewall rule for WAN:
+    1. Navigate to `Firewall -> Rules -> your WAN_PIA interface` and click the `+` 
+    ![alt text](/Images/PIA-Portforwarding/firewall%20rule.png)
+    - Action: `Pass`
+    - Interface: `WAN_PIA`
+    - Direction: `in` 
+    - Protocol: `TCP/UDP`
+    - Destination: `any`
+    - Destination port range: choose the ALIAS for your port, mine is `PIA_Minecraft_port` 
+    - Reply-to: `WAN_PIA` 
+    click save. 
+    2. Click the `+` again. 
+    - Action: `Pass` 
+    - Interace: `WAN_PIA` 
+    - Direction: `out` 
+    - Source: This is the source of your server, mine are in the `StarlinkLAN2` Virtual network so I will select the `StarlinkLan2 net` option. 
+    - Gateway: `WAN_PIA` 
+    Click save.  
+    Example firewall rules for Minecraft: 
+    ![alt text](/Images/PIA-Portforwarding/fwrules%20minecraft.png)
+12. Creating the Firewall rules for LAN: 
+    1. Select the network your server is in under the `Rules` option. 
+    2. Click the `+`  to create a new firewall rule for the network your server is in. 
+    - Action: `Pass`
+    - Interface: this is the LAN your server is in, mine is `StarlinkLan2` 
+    - Direction: `in`
+    - Source: `StarlinkLan2 net`, change yours to be what you have created (Default is LAN)
+    - Gateway: `WAN_PIA`. 
+    Click Save. 
