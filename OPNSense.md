@@ -125,3 +125,37 @@ Navigate to `System -> Settings -> Administration`:
     9. Navigate to your `WAN_DHCP` gateway and select the pencil icon to edit it. 
     10. Change the priority to 1, click save. 
     ![alt text](/Images/PIA-Portforwarding/defaultgateway.png)
+7. Enable the PIA tunnel:
+    1. In PUTTY, run the following command: 
+    - `/conf/PIAWireguard.py --debug --changeserver instancename`
+    2. In OPNSense WebUI, you should see the updates to the gateways. 
+8. CronJob
+    1. Navigate to `System -> Settings -> Cron` and click the `+` icon. 
+    ![alt text](/Images/PIA-Portforwarding/cronjob.png)
+    2. Set the `Minutes` to `*/5` 
+    3. Set the `Hours` to `*`
+    4. Set the `Command` to `PIA WireGuard Monitor Tunnels`
+    5. Add a description. 
+    6. Click save. 
+    ![alt text](/Images/PIA-Portforwarding/piacronjob.png)
+9. Update the MSS Settings: 
+    1. Navigate to `Firewall -> Settings -> Normalization` and click the `+` symbol. 
+    ![alt text](/Images/PIA-Portforwarding/normalization%20settings.png)
+    2. Select your Interfaces in the `Interfaces` section, if you created multiple PIA interfaces select all of them here. 
+    3. Enter a description of `Maximum MSS for PIA WireGuard Tunnel` (taken from FingerlessGlov3s guide).
+    4. Max MSS to `1380`
+    5. Click save. 
+    6. Click Apply Changes. 
+10. Creating the NAT rule: 
+The FingerlessGlov3s guide does not include this section. I am continuing where he left off in hopes of helping others that are new to OPNSense. 
+1. Navigate to `Firewall -> NAT -> Port Forward` and click the `+` symbol. 
+![alt text](/Images/PIA-Portforwarding/firewallNAT.png)
+2. In the `interface` section, select your `WAN_PIA` interface that you created. 
+3. Make sure `TCP/IP Version` is `IPv4`. 
+4. Protocol: `TCP/UDP` 
+5. Destination: `WAN_PIA address` 
+6. Destination port: Choose the ALIAS that is created by the PIA script, this is the port opened by the VPN. `PIA_Minecraft_port` is mine. 
+7. Redirect target IP: set this to the local IP of the host that is hosting your server `192.168.x.x` 
+8. Redirect target Port: set this to your target port, for Minecraft it is `25565`
+9. Click Save
+![alt text](/Images/PIA-Portforwarding/nat%20rule.png)
