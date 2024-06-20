@@ -1,6 +1,7 @@
 # OPNSense
 This is a beginners guide to using OPNSense with Private Internet Access (PIA) VPN to bypass CG-NAT that Starlink puts on its users.
 Huge shout out to the scripts and guides previously made to the community for making it simple to deploy a PIA tunnel on OPNSense. (FingerlessGlov3s)
+Note: PIA does not support portforwarding in the USA, I used canada as a close alternative and have no issues with latency for Minecraft / NGINX. 
 
 ## Prerequisites:
 - Obtained a PIA subscription 
@@ -8,7 +9,7 @@ Huge shout out to the scripts and guides previously made to the community for ma
 - OPNSense version 24.0 or newer.
 
 ## Steps:
-1. You can follow the PIA guide [(Awesome PIA guide that I initially followed:)](https://github.com/FingerlessGlov3s/OPNsensePIAWireguard/tree/main) for setting up PIA or follow the steps below. 
+1. You can follow the PIA guide [(Awesome PIA guide that I initially followed)](https://github.com/FingerlessGlov3s/OPNsensePIAWireguard/tree/main) for setting up PIA or follow the steps below. 
 NOTE: you can only have 1 port per VPN tunnel on PIA, with OPNSense you can have multiple VPN tunnels created to have multiple ports, some edits to the config will be needed for this. 
 2. Navigate to `System -> Firmware -> Plugins`, here search for the `os-wireguard` plugin.
 Click the `+` symbol to install the Wireguard Plugin.  
@@ -36,5 +37,61 @@ Navigate to `System -> Settings -> Administration`:
     - `Firewall: Aliases` (can be found by searching for "Alias")
     - `System: Static Routes`
     - `VPN: WireGuard` 
-    - Select the `+` icon to create an API key, save this for a later step. 
+    - Select the `+` icon to create an API key, save this for a later step.
+    - Scroll down and save the changes. 
     ![alt text](/Images/PIA-Portforwarding/user%20permissions%20and%20api%20key.png)
+3. SSH to OPNSense:
+    1. Open the SSH tool of your choice, I use PUTTY. 
+    2. SSH to the IP of your OPNSense router (mine is `192.168.5.1`).
+    3. Login with your `root` user and password you created when setting up OPNSense (same as logging into the router via WebUI).
+    4. When prompted, `select option 8`. 
+    ![alt text](/Images/PIA-Portforwarding/putty%20opnsense%20option.png)
+    5. Inside the shell run the following commands: 
+        - `fetch -o /conf https://raw.githubusercontent.com/FingerlessGlov3s/OPNsensePIAWireguard/main/PIAWireguard.py` 
+        - `fetch -o /conf https://raw.githubusercontent.com/FingerlessGlov3s/OPNsensePIAWireguard/main/ca.rsa.4096.crt`
+        - `fetch -o /usr/local/opnsense/service/conf/actions.d https://raw.githubusercontent.com/FingerlessGlov3s/OPNsensePIAWireguard/main/actions_piawireguard.conf`
+    6. Download the latest release from the FingerlessGove3s repo to your machine. 
+        - https://github.com/FingerlessGlov3s/OPNsensePIAWireguard/releases
+    7. Edit the `PIAWireguard.json` configuration 
+        - Open the OPNSense key that was previously downloaded, copy the values for the Key into the `opnsenseKey` line. 
+        - Copy the secret value into the `opnsenseSecret` line. 
+        - Insert your PIA username (The p####### value).
+        - Insert your PIA password. 
+        - OPNSense prefix, change this to `PIA`
+        - Add your instancees, set the `portForward` section to `true`
+        - For every instance, the `opnsenseWGPort` needs to increase by one. 
+    8. Example configuration: 
+    ```
+    {
+    "opnsenseURL": "https://127.0.0.1",
+    "opnsenseKey": "xxx",
+    "opnsenseSecret": "xxx",
+    "piaUsername": "p########",
+    "piaPassword": "YOURPASSWORD",
+    "tunnelGateway": null,
+    "opnsenseWGPrefixName": "PIA",
+    "instances": {
+        "Minecraft": {
+            "regionId": "ca_toronto",
+            "dipToken": "",
+            "dip": false,
+            "portForward": true,
+            "opnsenseWGPort": "51815"
+        },
+		"Minecraft_Modded": {
+            "regionId": "ca_toronto",
+            "dipToken": "",
+            "dip": false,
+            "portForward": true,
+            "opnsenseWGPort": "51816"
+        },
+		"Plex": {
+            "regionId": "ca_ontario-so",
+            "dipToken": "",
+            "dip": false,
+            "portForward": true,
+            "opnsenseWGPort": "51817"
+        }
+    }
+}
+    ```
