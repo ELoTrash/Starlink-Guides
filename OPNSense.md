@@ -91,9 +91,9 @@ Navigate to `System -> Settings -> Administration`:
             "dip": false,
             "portForward": true,
             "opnsenseWGPort": "51817"
+         }
         }
     }
-}
     ```
 4. Configuration: 
     1. cd into the `/conf` folder
