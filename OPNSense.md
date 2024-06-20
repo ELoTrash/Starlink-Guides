@@ -61,7 +61,7 @@ Navigate to `System -> Settings -> Administration`:
         - Add your instancees, set the `portForward` section to `true`
         - For every instance, the `opnsenseWGPort` needs to increase by one. 
     8. Example configuration: 
-```
+    ```
     {
     "opnsenseURL": "https://127.0.0.1",
     "opnsenseKey": "xxx",
@@ -94,7 +94,7 @@ Navigate to `System -> Settings -> Administration`:
         }
     }
 }
-```
+    ```
 4. Configuration: 
     1. cd into the `/conf` folder
     2. Run `nano PIAWireguard.json` paste in your JSON configuration. 
