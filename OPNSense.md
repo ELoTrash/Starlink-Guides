@@ -94,8 +94,9 @@ Navigate to `System -> Settings -> Administration`:
         }
     }
 }
-
-    - cd into the `/conf` folder
-    - Run `nano PIAWireguard.json` paste in your JSON configuration. 
-    - Hit `CTRL + X` then `y` to save it. 
+```
+4. Configuration: 
+    1. cd into the `/conf` folder
+    2. Run `nano PIAWireguard.json` paste in your JSON configuration. 
+    3. Hit `CTRL + X` then `y` to save it. 
      ![alt text](/Images/PIA-Portforwarding/nano.png)
