@@ -11,6 +11,11 @@ https://discord.gg/Rr2u4ystEe
 - V3 - Square Dishy
 - V4 - Square no motor dish. 
 
+- Flat HP
+- Business HP
+- Mini dish
+
+
 ## Guides: 
 1. Tailscale - A guide to setting up LAN access with tailscale.
 2. Starlink GRPCurl - A guide to setting up automatic reboots and more. 
